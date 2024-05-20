@@ -19,7 +19,7 @@ const Page = () => {
             password: formData.password,
         };
 
-        axios.post('http://localhost:4000/user/checkUser', { dataToSend })
+        axios.post('https://next-mail-backend.vercel.app/user/checkUser', { dataToSend })
             .then((response) => {
                 localStorage.setItem('token', response.data.token);
 

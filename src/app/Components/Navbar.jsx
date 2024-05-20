@@ -56,7 +56,7 @@ const Navbar = ({ onSearch }) => {
   const fetchInfo = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:4000/user/get-info', {
+      const response = await axios.get('https://next-mail-backend.vercel.app/user/get-info', {
         headers: {
           Authorization: token,
         },

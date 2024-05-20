@@ -18,7 +18,7 @@ const page = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            await fetchEmails('http://localhost:4000/mail/get-mail', dispatch, setLoading);
+            await fetchEmails('https://next-mail-backend.vercel.app/mail/get-mail', dispatch, setLoading);
         };
 
         fetchData(); // Initial fetch
@@ -32,7 +32,7 @@ const page = () => {
     const handleEmailClick = async (email) => {
         if (!email.read) {
             try {
-                await axios.put(`http://localhost:4000/mail/mark-read/${email._id}`);
+                await axios.put(`https://next-mail-backend.vercel.app/mail/mark-read/${email._id}`);
                 const updatedEmail = { ...email, read: true };
                 dispatch(setEmails(emails.map(e => (e._id === email._id ? updatedEmail : e))));
                 setSelectedEmail(updatedEmail);

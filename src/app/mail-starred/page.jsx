@@ -16,7 +16,7 @@ export default function page() {
     const [searchResults, setSearchResults] = useState([]);
 
     useEffect(() => {
-        fetchEmails('http://localhost:4000/mail/get-star-mail', dispatch, setLoading);
+        fetchEmails('https://next-mail-backend.vercel.app/mail/get-star-mail', dispatch, setLoading);
     }, [dispatch]);
 
     const handleEmailClick = (email) => {

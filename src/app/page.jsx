@@ -27,7 +27,7 @@ const Page = () => {
         password: formData.password,
       };
 
-      axios.post('https://next-mail-backend.vercel.app//user/addUser', { dataToSend })
+      axios.post('https://next-mail-backend.vercel.app/user/addUser', { dataToSend })
         .then(() => {
           alert('Account Successfully Created: ');
           setFormData({

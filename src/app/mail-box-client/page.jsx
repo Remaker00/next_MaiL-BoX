@@ -26,7 +26,7 @@ const page = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:4000/mail/sent-mail', dataToSend, {
+            const response = await axios.post('https://next-mail-backend.vercel.app/mail/sent-mail', dataToSend, {
                 headers: {
                     Authorization: token,
                 },

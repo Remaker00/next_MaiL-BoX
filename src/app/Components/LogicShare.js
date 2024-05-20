@@ -21,7 +21,7 @@ export const fetchEmails = async (url, dispatch, setLoading) => {
 export const handleDelete = async (e, email, dispatch, emails) => {
     e.stopPropagation();
     try {
-        const response = await axios.delete(`http://localhost:4000/mail/deletemail/${email._id}`);
+        const response = await axios.delete(`https://next-mail-backend.vercel.app/mail/deletemail/${email._id}`);
         if (response.status === 200) {
             const update = emails.filter((e) => e._id !== email._id);
 
@@ -38,7 +38,7 @@ export const handleDelete = async (e, email, dispatch, emails) => {
 export const handleStarred = async (e, email, dispatch, emails) => {
     e.stopPropagation();
     try {
-        const response = await axios.post(`http://localhost:4000/mail/star_mail/${email._id}`);
+        const response = await axios.post(`https://next-mail-backend.vercel.app/mail/star_mail/${email._id}`);
         if (response.status === 200) {
             console.log('Email Starred successfully');
             const update = emails.filter((e) => e._id !== email._id);
